@@ -44,6 +44,7 @@ var IRCCloudEmbed = function() {
         var image = $('<img class="irccloud-embed" height=' + MEDIA_HEIGHT + '>')
             .error(function(){ message.remove(); })
             .attr("src", href)
+            .css('maxWidth', '100%')
             .load(function(){
                 var $this = $(this);
                 $this.attr('title', this.naturalWidth + " x " + this.naturalHeight);
