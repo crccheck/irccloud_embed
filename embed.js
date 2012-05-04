@@ -39,9 +39,12 @@ var IRCCloudEmbed = function() {
             .click(function(){
                 var $this = $(this);
                 if ($this.attr('height')){
+                    if (this.naturalWidth > message.width()) {
+                        $this.attr('width', message.width());
+                    }
                     $this.removeAttr('height');
                 } else {
-                    $this.attr('height', MEDIA_HEIGHT);
+                    $this.attr('height', MEDIA_HEIGHT).removeAttr('width');
                 }
 
             });
